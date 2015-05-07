@@ -194,6 +194,19 @@ public class GazeData
     {
         return (state & NO_TRACKING_MASK) == 0 && rawCoordinates.x != 0 && rawCoordinates.y != 0;
     }
+    
+    public String toString(){
+    	return String.format("%d, %s, %b, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f, %.4f\n", 
+    						this.state, this.timeStampString, this.isFixated,
+    						this.rawCoordinates.x, this.rawCoordinates.y,
+    						this.smoothedCoordinates.x, this.smoothedCoordinates.y,
+    						this.leftEye.smoothedCoordinates.x, this.leftEye.smoothedCoordinates.y,
+    						this.leftEye.pupilCenterCoordinates.x, this.leftEye.pupilCenterCoordinates.y,
+    						this.leftEye.pupilSize, this.leftEye.rawCoordinates.x, this.leftEye.rawCoordinates.y,
+    						this.rightEye.smoothedCoordinates.x, this.rightEye.smoothedCoordinates.y,
+    						this.rightEye.pupilCenterCoordinates.x, this.rightEye.pupilCenterCoordinates.y,
+    						this.rightEye.pupilSize, this.rightEye.rawCoordinates.x, this.rightEye.rawCoordinates.y);
+    }
 
     /**
      * Contains tracking results of a single eye.
