@@ -95,6 +95,14 @@ public class GazeData
 
         this.isFixated = new Boolean(other.isFixated);
     }
+    
+    /**
+     * Same as constructor
+     */
+    public void timeStampToString(){
+    	Date date = new Date(timeStamp);
+        timeStampString = sdf.format(date);
+    }
 
     @Override
     public boolean equals(Object o)
